@@ -1,14 +1,4 @@
-const pg = require('pg');
-// const knex = require('knex');
-
-const config = {
-	user: 'adrien',
-	database: 'climber_guru',
-	password: '2gf31d31',
-	port: 5432,
-};
-
-const pool = new pg.Pool(config);
+const knex = require('../../data/db');
 
 const router = (app) => {
 	app.get('/', (request, response) => {
@@ -18,53 +8,20 @@ const router = (app) => {
 	});
 
 	app.get('/users', (req, res) => {
-		pool.connect((err, client, done) => {
-			if (err) {
-				console.log(`Can not connect to the DB${err}`);
-			}
-
-			client.query('SELECT * FROM account', (err, result) => {
-				done();
-				if (err) {
-					console.log(err);
-					res.status(400).send(err);
-				}
-				res.status(200).send(result.rows);
-			});
+		knex.select().from('account').then(function(users){
+			res.send(users);
 		});
 	});
 
 	app.get('/sessions', (req, res) => {
-		pool.connect((err, client, done) => {
-			if (err) {
-				console.log(`Can not connect to the DB${err}`);
-			}
-
-			client.query('SELECT * FROM session', (err, result) => {
-				done();
-				if (err) {
-					console.log(err);
-					res.status(400).send(err);
-				}
-				res.status(200).send(result.rows);
-			});
+		knex.select().from('session').then(function(sessions){
+			res.send(sessions);
 		});
 	});
 
 	app.get('/climbs', (req, res) => {
-		pool.connect((err, client, done) => {
-			if (err) {
-				console.log(`Can not connect to the DB${err}`);
-			}
-
-			client.query('SELECT * FROM session', (err, result) => {
-				done();
-				if (err) {
-					console.log(err);
-					res.status(400).send(err);
-				}
-				res.status(200).send(result.rows);
-			});
+		knex.select().from('climb').then(function(climbs){
+			res.send(climbs);
 		});
 	});
 };
