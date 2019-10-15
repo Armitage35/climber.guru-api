@@ -1,5 +1,5 @@
 const pg = require('pg');
-const knex = require('knex');
+// const knex = require('knex');
 
 const config = {
 	user: 'adrien',
