@@ -13,8 +13,6 @@ app.use(bodyParser.urlencoded({
 	extended: true,
 }));
 
-const knex = require('knex');
-
 routes(app);
 
 // Start the server
