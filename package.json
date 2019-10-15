@@ -7,7 +7,8 @@
 	"license": "MIT",
 	"scripts": {
 		"start": "nodemon src/server.js",
-		"lint": "eslint --ignore-path .gitignore ."
+		"lint": "eslint --ignore-path .gitignore .",
+		"readyDB": "bash src/readyDB.sh"
 	},
 	"dependencies": {
 		"body-parser": "^1.19.0",
