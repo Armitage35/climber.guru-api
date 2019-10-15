@@ -1,4 +1,4 @@
-exports.up = (knex) => knex.schema.createTable('user', (tbl) => {
+exports.up = (knex) => knex.schema.createTable('account', (tbl) => {
 	tbl.increments().primary();
 	tbl.string('first_name', 128);
 	tbl.string('last_name', 128);
@@ -12,4 +12,4 @@ exports.up = (knex) => knex.schema.createTable('user', (tbl) => {
 	tbl.timestamp('created_on', 128).notNullable().defaultTo(knex.fn.now());
 });
 
-exports.down = (knex) => knex.schema.dropTableIfExists('user');
+exports.down = (knex) => knex.schema.dropTableIfExists('account');

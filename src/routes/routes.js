@@ -17,13 +17,13 @@ const router = (app) => {
 		});
 	});
 
-	app.get('/db', (req, res, next) => {
+	app.get('/users', (req, res, next) => {
 		pool.connect((err, client, done) => {
 			if (err) {
 				console.log(`Can not connect to the DB${err}`);
 			}
 
-			client.query('SELECT * FROM users', (err, result) => {
+			client.query('SELECT * FROM account', (err, result) => {
 				done();
 				if (err) {
 					console.log(err);
@@ -34,6 +34,5 @@ const router = (app) => {
 		});
 	});
 };
-
 
 module.exports = router;

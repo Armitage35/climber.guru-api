@@ -1,8 +1,8 @@
 exports.up = (knex) => knex.schema.createTable('session', (tbl) => {
 	tbl.increments().primary();
-	tbl.integer('user_id')
+	tbl.integer('account_id')
 		.references('id')
-		.inTable('user')
+		.inTable('account')
 		.index()
 		.notNullable()
 		.onDelete('CASCADE');
