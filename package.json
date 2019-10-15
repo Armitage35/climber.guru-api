@@ -18,7 +18,8 @@
 		"knex": "^0.19.5",
 		"mysql": "^2.17.1",
 		"pg": "^7.12.1",
-		"request": "^2.88.0"
+		"request": "^2.88.0",
+		"sqlite3": "^4.1.0"
 	},
 	"devDependencies": {
 		"eslint": "^6.5.1",
