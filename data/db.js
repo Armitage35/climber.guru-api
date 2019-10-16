@@ -1,12 +1,15 @@
+/* eslint-disable no-undef */
 const knex = require('knex');
+require('dotenv').config();
+
 
 const database = knex({
-	client: 'pg', // pg is the database library for postgreSQL on knexjs
+	client: 'pg',
 	connection: {
-		host: '127.0.0.1', // Your local host IP
-		user: 'adrien', // Your postgres user name
-		password: '2gf31d31', // Your postgres user password
-		database: 'climber_guru', // Your database name
+		host: process.env.DB_HOST,
+		user: process.env.DB_USER,
+		password: process.env.DB_PASSWORD,
+		database: process.env.DB_NAME
 	},
 });
 
