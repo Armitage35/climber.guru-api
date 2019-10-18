@@ -3,7 +3,7 @@ const knex = require('../../data/db');
 const router = app => {
 	app.get('/', (request, response) => {
 		response.send({
-			message: 'Node.js and Express REST API',
+			message: 'Node.js and Express REST API'
 		});
 	});
 
