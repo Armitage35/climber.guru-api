@@ -12,6 +12,16 @@ app.use(function(req, res, next) {
 	next();
 });
 
+app.options('/*', function(req, res) {
+	res.header('Access-Control-Allow-Origin', '*');
+	res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+	res.header(
+		'Access-Control-Allow-Headers',
+		'Content-Type, Authorization, Content-Length, X-Requested-With'
+	);
+	res.send(200);
+});
+
 require('dotenv').config();
 // eslint-disable-next-line no-undef
 const port = process.env.PORT || 3000;

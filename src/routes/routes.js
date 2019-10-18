@@ -26,7 +26,7 @@ const router = app => {
 			});
 	});
 
-	app.options('/sessions', (req, res) => {
+	app.post('/sessions', (req, res) => {
 		console.log(req);
 		res.send(req.body);
 	});
