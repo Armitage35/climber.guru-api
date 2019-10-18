@@ -9,7 +9,7 @@ exports.seed = function(knex) {
 					last_name: 'Nafziger',
 					email: 'rnafziger0@go.com',
 					city: 'Benito Juarez',
-					country: 'Mexico',
+					country: 'Mexico'
 				},
 				{
 					id: 2,
@@ -17,7 +17,7 @@ exports.seed = function(knex) {
 					last_name: 'Simpkins',
 					email: 'asimpkins1@tripod.com',
 					city: 'Zeleneč',
-					country: 'Czech Republic',
+					country: 'Czech Republic'
 				},
 				{
 					id: 3,
@@ -25,7 +25,7 @@ exports.seed = function(knex) {
 					last_name: 'Stirton',
 					email: 'dstirton2@cam.ac.uk',
 					city: 'Yolöten',
-					country: 'Turkmenistan',
+					country: 'Turkmenistan'
 				},
 				{
 					id: 4,
@@ -33,7 +33,7 @@ exports.seed = function(knex) {
 					last_name: 'Kempston',
 					email: 'pkempston3@lycos.com',
 					city: 'Jintao',
-					country: 'China',
+					country: 'China'
 				},
 				{
 					id: 5,
@@ -41,7 +41,7 @@ exports.seed = function(knex) {
 					last_name: 'Simonassi',
 					email: 'fsimonassi4@bbc.co.uk',
 					city: 'Shuiyuan',
-					country: 'China',
+					country: 'China'
 				},
 				{
 					id: 6,
@@ -49,7 +49,7 @@ exports.seed = function(knex) {
 					last_name: 'Moreland',
 					email: 'lmoreland5@tinyurl.com',
 					city: 'Gialo',
-					country: 'Libya',
+					country: 'Libya'
 				},
 				{
 					id: 7,
@@ -57,7 +57,7 @@ exports.seed = function(knex) {
 					last_name: 'Olyfant',
 					email: 'molyfant6@t.co',
 					city: 'Pochep',
-					country: 'Russia',
+					country: 'Russia'
 				},
 				{
 					id: 8,
@@ -65,7 +65,7 @@ exports.seed = function(knex) {
 					last_name: 'Leaves',
 					email: 'wleaves7@zdnet.com',
 					city: 'Kendaruan',
-					country: 'Indonesia',
+					country: 'Indonesia'
 				},
 				{
 					id: 9,
@@ -73,8 +73,8 @@ exports.seed = function(knex) {
 					last_name: 'Durbann',
 					email: 'sdurbann8@livejournal.com',
 					city: 'Kaset Wisai',
-					country: 'Thailand',
-				},
+					country: 'Thailand'
+				}
 			])
 		);
 };
