@@ -27,8 +27,9 @@ const router = app => {
 	});
 
 	app.post('/sessions', (req, res) => {
-		console.log(req);
-		res.send(req.body);
+		knex('session')
+			.insert({ account_id: req.body.userID, location: 62, climb_type: 2, grading_system: 'V system'})
+			.then(res.send(req.body));
 	});
 
 	app.get('/climbs', (req, res) => {
