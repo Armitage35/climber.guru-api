@@ -11,6 +11,7 @@ const router = app => {
 		knex.select()
 			.from('account')
 			.then(function(users) {
+				console.log(users);
 				res.send(users);
 			});
 	});
