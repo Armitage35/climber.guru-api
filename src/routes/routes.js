@@ -10,8 +10,9 @@ const router = app => {
 	app.get('/users', (req, res) => {
 		knex.select()
 			.from('account')
+			.where('id', req.query.userID)
 			.then(function(users) {
-				console.log(users);
+				// console.log(users);
 				res.send(users);
 			});
 	});
@@ -19,14 +20,21 @@ const router = app => {
 	app.get('/sessions', (req, res) => {
 		knex.select()
 			.from('session')
+			.where('account_id', req.query.userID)
 			.then(function(sessions) {
 				res.send(sessions);
 			});
 	});
 
+	app.options('/sessions', (req, res) => {
+		console.log(req);
+		res.send(req.body);
+	});
+
 	app.get('/climbs', (req, res) => {
 		knex.select()
 			.from('climb')
+			.where('account_id', req.query.userID)
 			.then(function(climbs) {
 				res.send(climbs);
 			});
