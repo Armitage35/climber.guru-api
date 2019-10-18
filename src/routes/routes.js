@@ -12,7 +12,6 @@ const router = app => {
 			.from('account')
 			.where('id', req.query.userID)
 			.then(function(users) {
-				// console.log(users);
 				res.send(users);
 			});
 	});
