@@ -26,9 +26,28 @@ const router = app => {
 	});
 
 	app.post('/sessions', (req, res) => {
+		let climbs = req.body.climbs;
+		let userID = req.body.userID;
+
 		knex('session')
-			.insert({ account_id: req.body.userID, location: 62, climb_type: 2, grading_system: 'V system'})
-			.then(res.send(req.body));
+			.insert({
+				account_id: userID,
+				location: req.body.session.location
+			})
+			.returning('id')
+			.then(function(newSessionID, err) {
+				if (err) return res.send(err);
+				for (const element of climbs) {
+					element.session_id = newSessionID[0];
+					element.account_id = userID;
+				}
+
+				knex('climb')
+					.insert(climbs)
+					.then(function() {
+						res.send('OK');
+					});
+			});
 	});
 
 	app.get('/climbs', (req, res) => {

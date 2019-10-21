@@ -11,7 +11,7 @@ exports.up = knex =>
 			.inTable('session')
 			.index()
 			.notNullable();
-		tbl.string('tags', 128).notNullable();
+		tbl.string('tags', 128);
 		tbl.integer('grade')
 			.references('id')
 			.inTable('climb_grade')
