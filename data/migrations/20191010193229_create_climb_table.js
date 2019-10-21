@@ -12,7 +12,11 @@ exports.up = knex =>
 			.index()
 			.notNullable();
 		tbl.string('tags', 128).notNullable();
-		tbl.integer('grade', 128).notNullable();
+		tbl.integer('grade')
+			.references('id')
+			.inTable('climb_grade')
+			.index()
+			.notNullable();
 		tbl.integer('quality', 128).notNullable();
 		tbl.datetime('created_on', 128)
 			.notNullable()
