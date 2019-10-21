@@ -17,7 +17,11 @@ exports.up = knex =>
 			.inTable('climb_grade')
 			.index()
 			.notNullable();
-		tbl.integer('quality', 128).notNullable();
+		tbl.integer('performance')
+			.references('id')
+			.inTable('climb_performance')
+			.notNullable()
+			.index();
 		tbl.datetime('created_on', 128)
 			.notNullable()
 			.defaultTo(knex.fn.now());
