@@ -12,17 +12,29 @@ const router = app => {
 			.from('account')
 			.where('id', req.query.userID)
 			.then(function(userDetails) {
-				console.log(userDetails);
 				knex.select()
 					.from('climb_grade')
 					.whereIn('system_id', [
 						userDetails[0].bouldering_grading,
-						userDetails[0].route_grading,
+						userDetails[0].route_grading
 					])
+					.join('grading_system', { system_id: 'grading_system.id' })
 					.then(function(grades) {
+						let boulderGrades = [];
+						let routeGrades = [];
+
+						for (const element of grades) {
+							if (element.climb_type === 'route') {
+								routeGrades.push(element);
+							} else boulderGrades.push(element);
+						}
+
 						let user = {
 							details: userDetails,
-							grades: { grades }
+							grades: {
+								boulderGrades: boulderGrades,
+								routeGrades: routeGrades
+							}
 						};
 						res.send(user);
 					});
