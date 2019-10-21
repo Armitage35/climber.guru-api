@@ -12,7 +12,7 @@ exports.seed = function(knex) {
 					country: 'Mexico',
 					favourite_location: Math.floor(Math.random() * 8) + 1,
 					bouldering_grading: 7,
-					route_grading: 1,
+					route_grading: 1
 				},
 				{
 					id: 2,
@@ -23,7 +23,7 @@ exports.seed = function(knex) {
 					country: 'Czech Republic',
 					favourite_location: Math.floor(Math.random() * 8) + 1,
 					bouldering_grading: 7,
-					route_grading: 1,
+					route_grading: 1
 				},
 				{
 					id: 3,
@@ -34,7 +34,7 @@ exports.seed = function(knex) {
 					country: 'Turkmenistan',
 					favourite_location: Math.floor(Math.random() * 8) + 1,
 					bouldering_grading: 7,
-					route_grading: 1,
+					route_grading: 1
 				},
 				{
 					id: 4,
@@ -45,7 +45,7 @@ exports.seed = function(knex) {
 					country: 'China',
 					favourite_location: Math.floor(Math.random() * 8) + 1,
 					bouldering_grading: 7,
-					route_grading: 1,
+					route_grading: 1
 				},
 				{
 					id: 5,
@@ -56,7 +56,7 @@ exports.seed = function(knex) {
 					country: 'China',
 					favourite_location: Math.floor(Math.random() * 8) + 1,
 					bouldering_grading: 7,
-					route_grading: 1,
+					route_grading: 1
 				},
 				{
 					id: 6,
@@ -67,7 +67,7 @@ exports.seed = function(knex) {
 					country: 'Libya',
 					favourite_location: Math.floor(Math.random() * 8) + 1,
 					bouldering_grading: 7,
-					route_grading: 1,
+					route_grading: 1
 				},
 				{
 					id: 7,
@@ -78,7 +78,7 @@ exports.seed = function(knex) {
 					country: 'Russia',
 					favourite_location: Math.floor(Math.random() * 8) + 1,
 					bouldering_grading: 7,
-					route_grading: 1,
+					route_grading: 1
 				},
 				{
 					id: 8,
@@ -89,7 +89,7 @@ exports.seed = function(knex) {
 					country: 'Indonesia',
 					favourite_location: Math.floor(Math.random() * 8) + 1,
 					bouldering_grading: 7,
-					route_grading: 1,
+					route_grading: 1
 				},
 				{
 					id: 9,
@@ -100,7 +100,7 @@ exports.seed = function(knex) {
 					country: 'Thailand',
 					favourite_location: Math.floor(Math.random() * 8) + 1,
 					bouldering_grading: 7,
-					route_grading: 1,
+					route_grading: 1
 				}
 			])
 		);
