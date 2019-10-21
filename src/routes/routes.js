@@ -30,7 +30,7 @@ const router = app => {
 						}
 
 						let user = {
-							details: userDetails,
+							details: userDetails[0],
 							grades: {
 								boulderGrades: boulderGrades,
 								routeGrades: routeGrades
@@ -50,6 +50,14 @@ const router = app => {
 			});
 	});
 
+	app.get('/performance', (req, res) => {
+		knex.select('id', 'name')
+			.from('climb_performance')
+			.then(function(performance) {
+				res.send(performance);
+			});
+	});
+
 	app.post('/sessions', (req, res) => {
 		let climbs = req.body.climbs;
 		let userID = req.body.userID;
@@ -63,6 +71,8 @@ const router = app => {
 			.then(function(newSessionID, err) {
 				if (err) return res.send(err);
 				for (const element of climbs) {
+					delete element.quality;
+					// element.performance = req.body;
 					element.session_id = newSessionID[0];
 					element.account_id = userID;
 				}
