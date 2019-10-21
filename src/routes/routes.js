@@ -7,12 +7,25 @@ const router = app => {
 		});
 	});
 
-	app.get('/users', (req, res) => {
+	app.get('/user', (req, res) => {
 		knex.select()
 			.from('account')
 			.where('id', req.query.userID)
-			.then(function(users) {
-				res.send(users);
+			.then(function(userDetails) {
+				console.log(userDetails);
+				knex.select()
+					.from('climb_grade')
+					.whereIn('system_id', [
+						userDetails[0].bouldering_grading,
+						userDetails[0].route_grading,
+					])
+					.then(function(grades) {
+						let user = {
+							details: userDetails,
+							grades: { grades }
+						};
+						res.send(user);
+					});
 			});
 	});
 
