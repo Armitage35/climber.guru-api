@@ -7,10 +7,12 @@ exports.up = knex =>
 			.index()
 			.notNullable()
 			.onDelete('CASCADE');
-		tbl.integer('location', 128).notNullable();
-		tbl.integer('climb_type', 128).notNullable();
+		tbl.integer('location')
+			.references('id')
+			.inTable('location')
+			.index()
+			.notNullable();
 		tbl.string('photo', 128);
-		tbl.string('grading_system', 128).notNullable();
 		tbl.timestamp('created_on', 128)
 			.notNullable()
 			.defaultTo(knex.fn.now());

@@ -11,7 +11,20 @@ exports.up = knex =>
 		tbl.integer('preferred_climb_type', 128);
 		tbl.string('avatar', 128);
 		tbl.string('cover_picture', 128);
-		tbl.integer('favourite_gym', 128);
+		tbl.integer('favourite_location')
+			.references('id')
+			.inTable('location')
+			.index();
+		tbl.integer('bouldering_grading')
+			.references('id')
+			.inTable('grading_system')
+			.notNullable()
+			.index();
+		tbl.integer('route_grading')
+			.references('id')
+			.inTable('grading_system')
+			.notNullable()
+			.index();
 		tbl.timestamp('created_on', 128)
 			.notNullable()
 			.defaultTo(knex.fn.now());
