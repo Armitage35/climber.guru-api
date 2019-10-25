@@ -79,7 +79,7 @@ const router = app => {
 				knex('climb')
 					.insert(climbs)
 					.then(function() {
-						res.send('OK');
+						res.send('Session saved');
 					});
 			});
 	});
