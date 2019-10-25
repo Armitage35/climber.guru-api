@@ -7,12 +7,36 @@ const router = app => {
 		});
 	});
 
-	app.get('/users', (req, res) => {
+	app.get('/user', (req, res) => {
 		knex.select()
 			.from('account')
 			.where('id', req.query.userID)
-			.then(function(users) {
-				res.send(users);
+			.then(function(userDetails) {
+				knex.select()
+					.from('climb_grade')
+					.whereIn('system_id', [
+						userDetails[0].bouldering_grading,
+						userDetails[0].route_grading
+					])
+					.then(function(grades) {
+						let boulderGrades = [];
+						let routeGrades = [];
+
+						for (const element of grades) {
+							if (element.type === 'route') {
+								routeGrades.push(element);
+							} else boulderGrades.push(element);
+						}
+
+						let user = {
+							details: userDetails[0],
+							grades: {
+								boulderGrades: boulderGrades,
+								routeGrades: routeGrades
+							}
+						};
+						res.send(user);
+					});
 			});
 	});
 
@@ -22,6 +46,14 @@ const router = app => {
 			.where('account_id', req.query.userID)
 			.then(function(sessions) {
 				res.send(sessions);
+			});
+	});
+
+	app.get('/performance', (req, res) => {
+		knex.select('id', 'name')
+			.from('climb_performance')
+			.then(function(performance) {
+				res.send(performance);
 			});
 	});
 
@@ -38,6 +70,8 @@ const router = app => {
 			.then(function(newSessionID, err) {
 				if (err) return res.send(err);
 				for (const element of climbs) {
+					element.performance = element.type;
+					delete element.type;
 					element.session_id = newSessionID[0];
 					element.account_id = userID;
 				}
@@ -45,7 +79,7 @@ const router = app => {
 				knex('climb')
 					.insert(climbs)
 					.then(function() {
-						res.send('OK');
+						res.send('Session saved');
 					});
 			});
 	});
