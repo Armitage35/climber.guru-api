@@ -23,7 +23,6 @@ const router = app => {
 						let routeGrades = [];
 
 						for (const element of grades) {
-							console.log(element);
 							if (element.type === 'route') {
 								routeGrades.push(element);
 							} else boulderGrades.push(element);
@@ -71,8 +70,8 @@ const router = app => {
 			.then(function(newSessionID, err) {
 				if (err) return res.send(err);
 				for (const element of climbs) {
-					delete element.quality;
-					// element.performance = req.body;
+					element.performance = element.type;
+					delete element.type;
 					element.session_id = newSessionID[0];
 					element.account_id = userID;
 				}
