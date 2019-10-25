@@ -64,7 +64,6 @@ const router = app => {
 		knex('session')
 			.insert({
 				account_id: userID,
-				location: req.body.session.location
 			})
 			.returning('id')
 			.then(function(newSessionID, err) {

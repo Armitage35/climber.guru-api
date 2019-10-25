@@ -10,7 +10,6 @@ exports.seed = function(knex) {
 					email: 'rnafziger0@go.com',
 					city: 'Benito Juarez',
 					country: 'Mexico',
-					favourite_location: Math.floor(Math.random() * 8) + 1,
 					bouldering_grading: 7,
 					route_grading: 1
 				},
@@ -21,7 +20,6 @@ exports.seed = function(knex) {
 					email: 'asimpkins1@tripod.com',
 					city: 'Zeleneč',
 					country: 'Czech Republic',
-					favourite_location: Math.floor(Math.random() * 8) + 1,
 					bouldering_grading: 7,
 					route_grading: 1
 				},
@@ -32,7 +30,6 @@ exports.seed = function(knex) {
 					email: 'dstirton2@cam.ac.uk',
 					city: 'Yolöten',
 					country: 'Turkmenistan',
-					favourite_location: Math.floor(Math.random() * 8) + 1,
 					bouldering_grading: 7,
 					route_grading: 1
 				},
@@ -43,7 +40,6 @@ exports.seed = function(knex) {
 					email: 'pkempston3@lycos.com',
 					city: 'Jintao',
 					country: 'China',
-					favourite_location: Math.floor(Math.random() * 8) + 1,
 					bouldering_grading: 7,
 					route_grading: 1
 				},
@@ -54,7 +50,6 @@ exports.seed = function(knex) {
 					email: 'fsimonassi4@bbc.co.uk',
 					city: 'Shuiyuan',
 					country: 'China',
-					favourite_location: Math.floor(Math.random() * 8) + 1,
 					bouldering_grading: 7,
 					route_grading: 1
 				},
@@ -65,7 +60,6 @@ exports.seed = function(knex) {
 					email: 'lmoreland5@tinyurl.com',
 					city: 'Gialo',
 					country: 'Libya',
-					favourite_location: Math.floor(Math.random() * 8) + 1,
 					bouldering_grading: 7,
 					route_grading: 1
 				},
@@ -76,7 +70,6 @@ exports.seed = function(knex) {
 					email: 'molyfant6@t.co',
 					city: 'Pochep',
 					country: 'Russia',
-					favourite_location: Math.floor(Math.random() * 8) + 1,
 					bouldering_grading: 7,
 					route_grading: 1
 				},
@@ -87,7 +80,6 @@ exports.seed = function(knex) {
 					email: 'wleaves7@zdnet.com',
 					city: 'Kendaruan',
 					country: 'Indonesia',
-					favourite_location: Math.floor(Math.random() * 8) + 1,
 					bouldering_grading: 7,
 					route_grading: 1
 				},
@@ -98,7 +90,6 @@ exports.seed = function(knex) {
 					email: 'sdurbann8@livejournal.com',
 					city: 'Kaset Wisai',
 					country: 'Thailand',
-					favourite_location: Math.floor(Math.random() * 8) + 1,
 					bouldering_grading: 7,
 					route_grading: 1
 				}
