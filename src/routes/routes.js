@@ -18,13 +18,13 @@ const router = app => {
 						userDetails[0].bouldering_grading,
 						userDetails[0].route_grading
 					])
-					.join('grading_system', { system_id: 'grading_system.id' })
 					.then(function(grades) {
 						let boulderGrades = [];
 						let routeGrades = [];
 
 						for (const element of grades) {
-							if (element.climb_type === 'route') {
+							console.log(element);
+							if (element.type === 'route') {
 								routeGrades.push(element);
 							} else boulderGrades.push(element);
 						}

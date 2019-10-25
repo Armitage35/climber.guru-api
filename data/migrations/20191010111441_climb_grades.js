@@ -8,6 +8,7 @@ exports.up = knex =>
 			.notNullable();
 		tbl.string('grade_name', 128).notNullable();
 		tbl.integer('points').notNullable();
+		tbl.string('type');
 	});
 
 exports.down = knex => knex.schema.dropTableIfExists('climb_grade');
