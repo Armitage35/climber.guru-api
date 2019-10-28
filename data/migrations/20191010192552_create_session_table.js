@@ -7,13 +7,8 @@ exports.up = knex =>
 			.index()
 			.notNullable()
 			.onDelete('CASCADE');
-		tbl.integer('location')
-			.references('id')
-			.inTable('location')
-			.index()
-			.notNullable();
 		tbl.string('photo', 128);
-		tbl.timestamp('created_on', 128)
+		tbl.date('date')
 			.notNullable()
 			.defaultTo(knex.fn.now());
 	});

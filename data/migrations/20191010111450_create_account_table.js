@@ -11,10 +11,6 @@ exports.up = knex =>
 		tbl.integer('preferred_climb_type', 128);
 		tbl.string('avatar', 128);
 		tbl.string('cover_picture', 128);
-		tbl.integer('favourite_location')
-			.references('id')
-			.inTable('location')
-			.index();
 		tbl.integer('bouldering_grading')
 			.references('id')
 			.inTable('grading_system')

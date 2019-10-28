@@ -1,6 +1,6 @@
 {
 	"name": "climber-guru-server",
-	"version": "0.3.0",
+	"version": "0.4.0",
 	"description": "Rest API for climber guru",
 	"main": "index.js",
 	"author": "Adrien D. Ahlqvist <adrien.dubois35@gmail.com>",
