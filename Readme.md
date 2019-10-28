@@ -7,5 +7,9 @@
 
 This repo handles the back-end aspect of [Climber Guru](https://climber.guru).
 
+## Trello
+
+You can follow this project on [Trello](https://trello.com/b/auJab1kZ).
+
 ----
 Brought to you by [Armitage](https://armitageweb.net) and made with :heart: in beautiful Montreal
